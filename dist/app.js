@@ -13,15 +13,25 @@ let o1 = o.currency
 }
 ddd()
 const country1 = document.getElementById("coutry")
+const list = document.querySelector("#list")
 const recomend = document.querySelector('.recomended')
 const ul = recomend.children[0]
 const ll = document.createElement('li')
 country1.addEventListener('input',()=>{
-	console.log(oo43)
+let coutries = Object.keys(oo43)
+	console.log(coutries)
 if (country1.value === '') {
-recomend.classList.add('hidden')	
+recomend.classList.add('hidden')
+
 }else{
-recomend.classList.remove('hidden')	
+list.innerHTML = ''
+	recomend.classList.remove('hidden')
+coutries.map((v)=>{
+if(v.toLowerCase().includes(country1.value.toLowerCase())){ 
+console.log(recomend.children)
+	list.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button class="text-center">${v}(${oo43[v]})</button></li>`
+}
+})
 };
 
 });
