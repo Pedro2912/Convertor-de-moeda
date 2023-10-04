@@ -10,42 +10,49 @@ return datd
 }
 data()
 const country1 = document.getElementById("coutry")
+const countryRes = document.getElementById("coutryResult")
 const list = document.querySelector("#list")
+const listRes = document.querySelector("#listRes")
 const recomend = document.querySelector('.recomended')
+const recomendRes = document.querySelector('.recomendedRes')
 const ul = recomend.children[0]
 const ll = document.createElement('li')
 country1.addEventListener('input',()=>{
+	search(country1,list,recomend)
+})
+countryRes.addEventListener(("input"),()=>{
+search(countryRes,listRes,recomendRes)
+})
+// change the values to a inside value in the function to not need to create a copie of the function for every form 
+function search(coutry12,list2,rec){
 let coutries = Object.keys(oo43)
-if (country1.value === '') {
-recomend.classList.add('hidden')
+if (coutry12.value === '') {
+rec.classList.add('hidden')
 
 }else{
-list.innerHTML = ''
-	recomend.classList.remove('hidden')
+list2.innerHTML = ''
+	rec.classList.remove('hidden')
 	coutries.map((v)=>{
-if(v.toLowerCase().includes(country1.value.toLowerCase())){ 
-	list.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="pp text-center">${v} (${oo43[v]})</button></li>`
+if(v.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().includes(coutry12.value.toLowerCase())){ 
+	list2.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="pp text-center">${v}</button></li>`
 }
-
 })
 };
 const pp = document.querySelectorAll('.pp')
-buttonClick(pp)
-})
-function buttonClick(button){
-button.forEach(element => {
+buttonClick(pp,coutry12,rec)
+}
+function buttonClick(button, cou, rec){ 
+	button.forEach(element => {
 element.addEventListener('click',()=> {
-	if(element.textContent.length>16){
-	country1.value = element.textContent.split('(')[0] 
-	}else{
-country1.value = element.textContent
-	}
-recomend.classList.add('hidden')
+cou.value = element.textContent
+	
+rec.classList.add('hidden')
+valuess(oo43[element.textContent])
 })	
 });	
 }
 const values = document.querySelector("#value")
-function valuess(){
-
+const valuesRes = document.querySelector("#valueRes")
+function valuess(currency){
 }
 
