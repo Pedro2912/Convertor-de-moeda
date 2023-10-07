@@ -34,7 +34,7 @@ list2.innerHTML = ''
 	rec.classList.remove('hidden')
 	coutries.map((v)=>{
 if(v.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().includes(coutry12.value.toLowerCase())){ 
-	list2.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="pp text-center">${v}</button></li>`
+	list2.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="pp text-center">${v} (${oo43[v]})</button></li>`
 }
 })
 };
@@ -55,4 +55,10 @@ const values = document.querySelector("#value")
 const valuesRes = document.querySelector("#valueRes")
 function valuess(currency){
 }
+	values.addEventListener(("input"),()=>{
+let o = values.value
+let j =  o.split('');
+j = o[o.length-1]
+console.log(Number(j))	
+})
 
