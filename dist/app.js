@@ -15,8 +15,6 @@ const list = document.querySelector("#list")
 const listRes = document.querySelector("#listRes")
 const recomend = document.querySelector('.recomended')
 const recomendRes = document.querySelector('.recomendedRes')
-const ul = recomend.children[0]
-const ll = document.createElement('li')
 country1.addEventListener('input',()=>{
 	search(country1,list,recomend)
 })
@@ -34,27 +32,37 @@ list2.innerHTML = ''
 	rec.classList.remove('hidden')
 	coutries.map((v)=>{
 if(v.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().includes(coutry12.value.toLowerCase())){ 
-	list2.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="pp text-center">${v} (${oo43[v]})</button></li>`
-}
-})
-};
-const pp = document.querySelectorAll('.pp')
-buttonClick(pp,coutry12,rec)
-}
-function buttonClick(button, cou, rec){ 
-	button.forEach(element => {
-element.addEventListener('click',()=> {
-cou.value = element.textContent
-	
-rec.classList.add('hidden')
-valuess(oo43[element.textContent])
-})	
+		list2.innerHTML +=`<li class='hover:bg-slate-300 block p-1 border-solid border-b-[1px] border-slate-400'><button type="button"  class="${list2.id} pp" text-center">${v} (${oo43[v]})</button></li>`
+	}
+	})
+	};
+	const pp = document.querySelectorAll('.pp')
+	buttonClick(pp,coutry12,rec, list2)
+	}
+let c1 
+let c2
+	function buttonClick(button, cou, rec, list2){ 
+		button.forEach(element => {
+	element.addEventListener('click',()=> {
+	cou.value = element.textContent
+		
+	rec.classList.add('hidden')
+		if(list2.id === 'list'){
+	c1 = oo43[element.textContent.split('(')[0].trim()]
+	}else{
+	c2 = oo43[element.textContent.split('(')[0].trim()]
+	}
+	valuess(c1,c2)
+	})	
 });	
 }
+
+export default function valuess(curency){
+console.log(curency)
+}
+
 const values = document.querySelector("#value")
 const valuesRes = document.querySelector("#valueRes")
-function valuess(currency){
-}
 	values.addEventListener(("input"),()=>{
 let o = values.value
 let j =  o.split('');
