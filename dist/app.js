@@ -58,7 +58,10 @@ function valuess(currency){
 	values.addEventListener(("input"),()=>{
 let o = values.value
 let j =  o.split('');
-j = o[o.length-1]
-console.log(Number(j))	
-})
+if(isNaN(Number(j[j.length-1]))){
+j.pop()
+j = j.join("")
+values.value = j
+}
+	})
 

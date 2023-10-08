@@ -1,8 +1,11 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.3.3"
-   },
-  "scripts":{
-  "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "@everapi/currencyapi-js": "^1.0.6"
   }
 }
