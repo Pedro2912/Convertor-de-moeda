@@ -1,11 +1,25 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
-  },
-  "scripts": {
-    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
-  },
-  "dependencies": {
-    "@everapi/currencyapi-js": "^1.0.6"
-  }
+ "version": "1.0.0",
+ "name": "conversor-de-moeda",
+ "description": "",
+ "private": true,
+ "main": "app.js",
+ "devDependencies": {
+  "tailwindcss": "^3.3.3",
+  "webpack": "^5.89.0",
+  "webpack-cli": "^5.1.4"
+ },
+ "scripts": {
+  "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+  "test": "echo \"Error: no test specified\" && exit 1",
+
+  "build": "webpack"
+ },
+ "dependencies": {
+  "@everapi/currencyapi-js": "^1.0.6",
+  "lodash": "^4.17.21"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC"
 }
