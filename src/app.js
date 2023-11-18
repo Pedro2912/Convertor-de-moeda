@@ -1,6 +1,17 @@
-import name from './API.js'
+const { get } = require("lodash")
+//import name from './API.js'
+const name = {
+	'data':{
+	'BRL':{
+		value:'4.02349'
+	},
+	'USD':{
+	       value:'1'
+	}
+	}
+}
 let ss43 = name
-
+console.log(ss43)
 document.addEventListener(("click"),()=>{
 	recomend.classList.add("hidden")
 	recomendRes.classList.add('hidden')
@@ -41,10 +52,10 @@ rec.classList.add('hidden')
 list2.innerHTML = ''
 	rec.classList.remove('hidden')
 	coutries.map((v)=>{
-if(v.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().includes(coutry12.value.toLowerCase().trim())){ 
+if(`${v}${oo43[v]}`.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().includes(coutry12.value.toLowerCase().trim())){ 
 	list2.innerHTML +=`<li class='hover:bg-slate-300 w-[385px] h-8 block p-1 border-solid border-b-[1px] hover:border-r-[2px]  border-slate-400'>
 	<button type="button"  class=" relative h-8 top-0 w-[300px] ${list2.id} pp"> 
-	<img class="relative w-10 h-6 left-[-30px] top-[0px]"
+	<img class="relative w-[41px] h-6 left-[-34px] top-[0px]"
   src="https://flagcdn.com/h80/${code[v].toLowerCase()}.png"
   srcset="https://flagcdn.com/h160/${code[v].toLowerCase()}.png 2x,
 		https://flagcdn.com/h240/${code[v].toLowerCase()}.png 3x"
