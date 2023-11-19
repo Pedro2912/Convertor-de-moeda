@@ -4,15 +4,16 @@ document.addEventListener(("click"),()=>{
 	recomend.classList.add("hidden")
 	recomendRes.classList.add('hidden')
 })
+let oo43 
 let code
 async function data(){
-let dd = await fetch("dist/data.json");
+let dd = await fetch("data.json");
 let datd = await dd.json()
 datd = JSON.parse(datd)
+oo43 = datd.currency
 code = datd.abreviation
-return datd.currency
 }
-let oo43 =  data() 
+data()
 const country1 = document.getElementById("coutry")
 const countryRes = document.getElementById("coutryResult")
 
