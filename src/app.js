@@ -7,7 +7,7 @@ document.addEventListener(("click"),()=>{
 let oo43 
 let code
 async function data(){
-let dd = await fetch("dist/data.json");
+let dd = await fetch("./dist/data.json");
 	console.log(dd)
 let datd = await dd.json()
 datd = JSON.parse(datd)
