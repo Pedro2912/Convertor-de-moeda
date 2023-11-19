@@ -1,17 +1,4 @@
-const { get } = require("lodash")
-//import name from './API.js'
-const name = {
-	'data':{
-	'BRL':{
-		value:'4.02349'
-	},
-	'USD':{
-	       value:'1'
-	}
-	}
-}
-let ss43 = name
-console.log(ss43)
+import ss43 from './API.js'
 document.addEventListener(("click"),()=>{
 	recomend.classList.add("hidden")
 	recomendRes.classList.add('hidden')
