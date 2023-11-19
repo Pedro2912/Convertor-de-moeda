@@ -9,6 +9,7 @@ let code
 async function data(){
 let dd = await fetch("data.json");
 let datd = await dd.json()
+	console.log(datd)
 datd = JSON.parse(datd)
 oo43 = datd.currency
 code = datd.abreviation
