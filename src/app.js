@@ -1,12 +1,13 @@
-import ss43 from './API.js'
-
+import name from './API.js'
+const ss43 = name
 document.addEventListener(("click"),()=>{
 	recomend.classList.add("hidden")
 	recomendRes.classList.add('hidden')
 })
+let oo43
 let code
 async function data(){
-let dd = await fetch("data.json");
+let dd = await fetch("dist/data.json");
 let datd = await dd.json()
  datd = JSON.stringify(datd)
 datd = JSON.parse(datd)
